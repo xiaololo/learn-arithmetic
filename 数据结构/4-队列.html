@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据结构与算法</title>
+</head>
+
+<body>
+  数据结构：
+  栈 队列 链表 (有序)；
+  集合 字典（无序）；
+  树 堆 图 ；
+
+  算法：
+  链表：遍历链表，删除链表节点。
+  树、图：深度/广度优先遍历。
+  数组：冒泡/选择/插入/归并/快速排序、顺序/二分搜索。
+
+  ------------------------------------------------------
+  队列
+
+  ## 1.队列是什么
+  一个先进先出的数据结构 （enqueue 入栈 dequeue出栈）
+  javascript 没有队列，Array实现栈的所有功能；
+  队列常用操作：push、shift、queue[0]
+
+  ## 2.应用场景（后进先出的场景）
+  需要先进先出的场景
+  如：食堂排队打饭、JS异步任务队列、计算最近请求次数
+
+  JS异步任务队列：
+  JS是单线程的，无法同时处理异步中的并发任务
+  使用队列先后处理异步队列
+
+  计算最近请求次数：
+  有新请求就入队，3000ms前发出的请求出队
+  队列的长度就是最近请求次数
+
+  ## 3.算法题
+  leetCode:933.最近请求次数-
+  有新请求就入队，3000ms前发出的请求出队
+  队列的长度就是最近请求次数
+
+
+  ## 4.思考题 -- 做题
+
+  <script>
+  //1.-----------------------------
+  // queue文件
+  const queue=[]
+  //入栈
+  queue.push(1)
+  queue.push(2)
+  queue.push(3)
+  // 出栈
+  //shift  移除数组的第一个元素并返回
+  const item1=queue.shift() 
+  const item2=queue.shift()
+  const item3=queue.shift()
+
+  //4.-----------------------------
+  // 1、请用 ES6 的 class，封装一个 Queue 类，包括 push、shift、peek 方法。
+  class Stack{
+      constructor(arr=[]){
+        this.arr=arr
+      }
+      push(item){
+        this.arr.push(item)
+      }
+      shift(){
+        return this.arr.shift()
+      }
+      peek(item){
+        return this.arr[0]
+      }
+    }
+  // 2、请用队列这个数据结构结合 React 或 Vue写一个任务 App，包括添加任务和完成任务功能，要求任务只能先进先出，截图交作业即可。
+
+
+  
+  </script>
+</body>
+</html>

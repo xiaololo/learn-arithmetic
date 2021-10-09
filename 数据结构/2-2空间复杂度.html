@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据结构与算法</title>
+</head>
+
+<body>
+
+  ## 空间复杂度是什么？
+  是一个函数，用大O标识，如 O(1)、O(n)、O(n^2)
+  算法在运行过程中临时占用存储空间大小的量度
+  n2>nlog2n>n>根号n>log2n>1
+
+
+  ## 思考题
+  1、如果一段代码中有3个循环，它们的循环次数都是n，那么这段代码的时间复杂度是 O(3n) 还是 O(n)？
+  n
+  答：O(n)+O(n)+O(n)=3O(n)，前面系数可以忽略不计。因为O(n)只是一个抽象函数，前面的系数影响不大。
+  2、假设每天睡觉前，你都会数2的次方，1、2、4、8……，每次你都数到 n 才睡着，那么你数了几个数？时间复杂度是多少？
+  给予点评。
+  答：logn+1 O(logn)
+
+
+
+  <script>
+    // O(1)-单个变量
+    let i = 0
+    i += 1
+
+    // O(n)- 数组有n个变量，占用了n个内存单元
+    const list=[]
+    for (let i = 0; i < n; i++) {
+      list.push(i)
+    }
+
+    // O(n^2) -矩阵-二维数组，有n^2个变量
+    var n=5
+    const matrix=[]
+    for (let i = 0; i < n; i++) {
+      matrix.push([])
+      for (let j = 0; j < n; j++) {
+        matrix[i].push(j)
+      }
+    }
+    console.log(matrix)
+    // [[0, 1, 2, 3, 4]
+    // [0, 1, 2, 3, 4]
+    // [0, 1, 2, 3, 4]
+    // [0, 1, 2, 3, 4]
+    // [0, 1, 2, 3, 4]]
+
+
+
+
+  </script>
+
+</body>
+
+</html>

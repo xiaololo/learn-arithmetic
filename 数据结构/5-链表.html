@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据结构与算法</title>
+</head>
+
+<body>
+  数据结构：
+  栈 队列 链表 (有序)；
+  集合 字典（无序）；
+  树 堆 图 ；
+
+  算法：
+  链表：遍历链表，删除链表节点。
+  树、图：深度/广度优先遍历。
+  数组：冒泡/选择/插入/归并/快速排序、顺序/二分搜索。
+
+  ------------------------------------------------------
+  链表
+
+  ## 1.链表是什么
+  多个元素组成的列表
+  元素存储不连续，用next指针连在一起
+  javascript 没有链表数据结构，用Object模拟链表；
+  链表常用操作：修改next，遍历链表
+ 
+  
+  基本使用 见linkList文件
+
+  数组VS链表
+  数组 增删非首尾元素时，需移动元素。
+  链表 增删非首尾元素时，不需移动元素，只需要更改next指针即可。
+  <!-- ------------------------------------ -->
+  ## 2.前端与链表
+  ### JS中的原型链
+  原型链本质是链表
+  原型链上的节点是各种原型对象，比如 Function.prototype、Object.prototype
+  原型链通过 __proto__ 属性连接各种原型对象
+  
+  obj -> Object.prototype -> null
+  func -> Function.prototype -> Object.prototype -> null
+  arr -> Array.prototype -> Object.prototype -> null
+  见proto.js
+  ------------
+  原型链知识点：
+  如果 A 能沿着原型链找到 B.prototype，那么 A instanceof B为 true
+  obj instanceof Object  true
+  如果A对象上没有找到 X 属性，那么会沿着原型链找 X 属性。
+  const obj={}
+  Object.prototype.x='xx'
+  console.log(obj.x) //xx
+  ------------
+  面试题 1.手写 instanceof方法：
+  const instanceOf=(A,B)=>{
+    while (A && B){
+        if (A.__proto__ === B.prototype) {
+            return true
+        }
+        A=A.__proto__
+    }
+    return false
+}
+
+// instanceOf(obj, Object)
+console.log(instanceOf(obj, Array))//false
+console.log(instanceOf(arr, Array)) //true
+
+面试题 2. 
+var foo ={}
+F =function(){}
+Object.prototype.a='value a'
+Function.prototype.b='value b'
+
+console.log(foo.a) // value a
+console.log(foo.b) //undefined
+
+console.log(F.a) //value a
+console.log(F.b) //value b
+
+
+
+  ### 使用链表指针获取 JSON 的节点值
+  见json.js
+
+  <!-- ------------------------------------ -->
+  ## 3.题目：
+  ## leetCode:237.删除链表中的节点-见力扣
+  解题思路：
+  解题步骤：
+  时间复杂度O()
+  空间复杂度O()
+
+  ## leetCode:206.反转链表-见力扣
+
+
+  ## leetCode:2.两数相加-见力扣
+  模拟相加操作
+  需要遍历链表
+
+  ## leetCode:83.删除排序链表中的重复元素-见力扣
+
+  ## leetCode:141.环形链表-见力扣
+  <!------------------------------- -->
+  ## 4.思考题 -- 做题
+  编写一个 instanceOf 方法，可以判断一个变量是否是另一个变量的实例。
+  请判断一个链表是否为回文链表。题目链接：https://leetcode-cn.com/problems/palindrome-linked-list/
+  <script>
+  
+  //4.-----------------------------
+  // 编写一个 instanceOf 方法，可以判断一个变量是否是另一个变量的实例。
+    const instanceOf=(A,B)=>{
+      while (A && B){
+          if (A.__proto__ === B.prototype) {
+              return true
+          }
+          A=A.__proto__
+      }
+      return false
+    }
+  // 请判断一个链表是否为回文链表。
+  // 将值复制到数组中后用双指针法
+  // leetCode:234.回文链表-见力扣 https://leetcode-cn.com/problems/palindrome-linked-list/
+
+
+  
+  </script>
+</body>
+</html>
